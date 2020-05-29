@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Terraform Handson | 맥주연구하는 엔지니어의 기술 블로그</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Terraform Handson" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Terraform Handson 1년전부터 테라폼의 매력을 느껴 항상 해봐야지 하면서, 간단히 이해만 하고 실무에서는 아직 사용할 일이 없어 거의 손놓고 있었다. 2020년 5월 7일, DevOps 송주영님의 온라인 테라폼 강의를 듣고나서 다시 한번 시작해보자는 마음을 먹게 되어 이렇게 문서로 정리하게 되었다. 서울에서 근무할 당시, 시간날때마다 송주영님의 강의를 찾아 다녔었는데, 개인적으로 기술을 바라보는 그분의 철학을 존경하고 나의 롤모델이다. 핸즈온으로 사용한 코드 또한 송주영님의 github: aws-provisioning에서 많이 참고했다." />
+<meta property="og:description" content="Terraform Handson 1년전부터 테라폼의 매력을 느껴 항상 해봐야지 하면서, 간단히 이해만 하고 실무에서는 아직 사용할 일이 없어 거의 손놓고 있었다. 2020년 5월 7일, DevOps 송주영님의 온라인 테라폼 강의를 듣고나서 다시 한번 시작해보자는 마음을 먹게 되어 이렇게 문서로 정리하게 되었다. 서울에서 근무할 당시, 시간날때마다 송주영님의 강의를 찾아 다녔었는데, 개인적으로 기술을 바라보는 그분의 철학을 존경하고 나의 롤모델이다. 핸즈온으로 사용한 코드 또한 송주영님의 github: aws-provisioning에서 많이 참고했다." />
+<link rel="canonical" href="http://0.0.0.0:4000/jekyll/update/2020/05/29/welcome-to-jekyll.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/jekyll/update/2020/05/29/welcome-to-jekyll.html" />
+<meta property="og:site_name" content="맥주연구하는 엔지니어의 기술 블로그" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-29T11:47:24+00:00" />
+<script type="application/ld+json">
+{"headline":"Terraform Handson","dateModified":"2020-05-29T11:47:24+00:00","datePublished":"2020-05-29T11:47:24+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/jekyll/update/2020/05/29/welcome-to-jekyll.html"},"url":"http://0.0.0.0:4000/jekyll/update/2020/05/29/welcome-to-jekyll.html","description":"Terraform Handson 1년전부터 테라폼의 매력을 느껴 항상 해봐야지 하면서, 간단히 이해만 하고 실무에서는 아직 사용할 일이 없어 거의 손놓고 있었다. 2020년 5월 7일, DevOps 송주영님의 온라인 테라폼 강의를 듣고나서 다시 한번 시작해보자는 마음을 먹게 되어 이렇게 문서로 정리하게 되었다. 서울에서 근무할 당시, 시간날때마다 송주영님의 강의를 찾아 다녔었는데, 개인적으로 기술을 바라보는 그분의 철학을 존경하고 나의 롤모델이다. 핸즈온으로 사용한 코드 또한 송주영님의 github: aws-provisioning에서 많이 참고했다.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="맥주연구하는 엔지니어의 기술 블로그" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">맥주연구하는 엔지니어의 기술 블로그</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Terraform Handson</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-05-29T11:47:24+00:00" itemprop="datePublished">May 29, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="terraform-handson">Terraform Handson</h1>
+<p>1년전부터 테라폼의 매력을 느껴 항상 해봐야지 하면서, 간단히 이해만 하고 실무에서는 아직 사용할 일이 없어 거의 손놓고 있었다.
+2020년 5월 7일, DevOps 송주영님의 온라인 테라폼 강의를 듣고나서 다시 한번 시작해보자는 마음을 먹게 되어 이렇게 문서로 정리하게 되었다. 서울에서 근무할 당시, 시간날때마다 송주영님의 강의를 찾아 다녔었는데, 개인적으로 기술을 바라보는 그분의 철학을 존경하고 나의 롤모델이다.
+핸즈온으로 사용한 코드 또한 송주영님의 <a href="https://github.com/jupitersong/aws-provisioning">github: aws-provisioning</a>에서 많이 참고했다.</p>
+
+<h3 id="1-terraform-도커-컨테이너에서-실행">1. Terraform 도커 컨테이너에서 실행</h3>
+<ul>
+  <li><a href="Dockerfile">도커파일</a> 작성 및 이미지 생성
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker build -t haeyoon/terraform:latest
+</code></pre></div>    </div>
+    <p>** HashiCorp에서 제공하는 공식 <a href="https://hub.docker.com/r/hashicorp/terraform/">Terraform 도커이미지</a>를 사용해도 된다</p>
+  </li>
+  <li>컨테이너 접속 및 테라폼으로 인프라 구성
+```
+$ docker run -it -d <br />
+  -v $(pwd):/home/terraform/ <br />
+  –name tfserver <br />
+  haeyoon/terraform:latest</li>
+</ul>
+
+<p>$ docker exec -it tfserver /bin/bash
+```
+** attach로 접속하거나 exec명령어로 컨테이너 안에서 명령어를 실행하게도 할 수 있다.</p>
+
+<h3 id="2-terraform">2. Terraform</h3>
+
+<p>Terraform은 Infrastructure as Code(IAC)를 기반으로 HashiCorp에서 제공하는 도구이다. 먼저, IAC를 이해해보자.</p>
+
+<h5 id="infrastructure-as-codeiac란">Infrastructure as Code(IAC)란?</h5>
+<ul>
+  <li>
+    <p>AWS를 예를 들면, 콘솔과 같은 사용자 인터페이스에서 수동으로 구성 및 관리하는 프로세스와 인프라 구성값들을 지정된 파일형식에 맞춰 코드화하고 작성된 파일들로 특정 도구를 통해 인프라 리소스가 생성, 변경 및 관리되도록 한 개념으로서, 리소스들은 해당 인프라 내의 가상머신, 보안그룹, 네트워크 인터페이스등이 포함된다.</p>
+  </li>
+  <li>
+    <p><strong>IAC의 장점</strong>
+(*일부 영어번역은 직역이 아닌, 내 생각을 녹여서 번역을 했다)</p>
+    <ul>
+      <li><strong>easily repeatable ( 반복가능한 코드 )</strong></li>
+      <li><strong>easily readable ( 가독 및 쉬운 이해 )</strong></li>
+      <li><strong>operational certainty with “terraform plan” ( terraform plan을 통해 예측가능한 운영확실성 )</strong></li>
+      <li><strong>standardized environment builds ( 표준화된 환경 구축 )</strong></li>
+      <li><strong>quickly provisioned development environment ( 신속하게 프로비저닝되는 인프라 환경 )</strong></li>
+      <li><strong>disaster recovery ( 재해 발생시 빠른 복구 가능 )</strong></li>
+    </ul>
+
+    <p>DevOps 도구들을 사용하다보면 인프라에 대한 인식이 변화되면서 인프라 장애시 전통적인 방법처럼 오류를 찾아 수정하는 것이 아니라 이전버전으로 롤백을 한다거나 배포방식 -Blue/green, canary-적용와 같이 필요할 땐 쓰고 바로 버리는 추세와 Immutable infrastructure를 추구하는데, IAC 또한 그러하다는 시각으로 바라보고 있다.</p>
+  </li>
+</ul>
+
+<h5 id="terraform이란">Terraform이란?</h5>
+
+<ul>
+  <li>HashiCorp에서는 Terraform을 안전하고 반복가능한 방식으로 인프라를 구축, 변경 및 관리하기 위한 도구로 정의하고 있으며, aws CloudFormation와 함께 대표적인 IAC도구로 사용되고 있다.
+Terraform은 providers의 인프라나 서비스(리소스)들을 코드로 관리할 수 있도록 하므로 providers로 정의된 aws, gcp, azure, github, docker etc가 있다.</li>
+</ul>
+
+<p>HashiCorp에서 정의한 Terraform 장점은 다음과 같다.</p>
+<ul>
+  <li><strong>Terraform 장점</strong>
+    <ul>
+      <li><strong>Platform Agnostic ( 하나의 플랫폼에만 구애받지 않고 여러 플랫폼에서 동일하게 실행이 가능 )</strong></li>
+      <li><strong>State management ( State file로 인프라 상태를 비교 및 확인하여 관리 )</strong></li>
+      <li><strong>Operator confidence ( terraform apply할 때, 사용자 또는 운영자는 변경/추가 사항을 미리 검토하고 실행할 수 있으므로 안정적, 신뢰성의 특징을 가지며 검토단계에서 오류가 있으면, 제안된 plan을 적용하지 않을 수도 있다 )</strong></li>
+    </ul>
+  </li>
+  <li>HCL ( HashiCorp Configuration Language )
+  HCL은 HashiCorp의 제품에서 사용,인간과 기계 모두에게 친숙하게 느껴질 수 있도록 작성되었으며 JSON과 호환되므로 Terraform과 다른시스템의 호환이 가능하다.
+  ( * HCL에 대해서는 추후 재 정리할 예정 )</li>
+</ul>
+
+<p>테라폼에서 일부 중요한 용어들을 살펴보자. HashiCorp의 <a href="https://www.terraform.io/docs/glossary.html#policy">Terraform Glossary</a>페이지에 간략한 설명과 함께 해당 용어 문서로 링크가 되어 있다.</p>
+
+<ul>
+  <li>
+    <p>Providers
+  HashiCorp는 Providers를 테라폼과 API 상호작용을 통해 리소스를 제공하는 플러그인으로 정의하고 있다. 즉, 특정 인프라 제공자의 리소스 생성 및 관리를 위해 응답가능한 서비스들을 의미하며, 해당 제공자와 Terraform은 API를 통한 상호작용을 한다. 단일 provider뿐 아니라 복수 providers ( Multi providers ) 제공도 가능한데 예를 들면, AWS EC2 인스턴스 ID를 DataDog 모니터링 값으로 전달할 수 있다.
+  <a href="https://www.terraform.io/docs/providers/index.html">Providers 문서</a>를 보면, Providers로써 사용가능한 서비스 목록을 확인가능하다.</p>
+  </li>
+  <li>Resources
+  리소스 블록은 인프라를 정의한다. 블록이 뭘까? HashiCorp 공식문서를 읽어보면 리소스는 하나이상의 인프라 객체들을 명시한 블록이라고 했는데 아래의 VPC 리소스 블록을 살펴보자.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  # vpc
+  resource "aws_vpc" "default" {
+    cidr_block       = "10.0.0.0/16"
+    instance_tenancy = "default"
+
+    tags = {
+      Name = "vpc-${var.vpc_name}"
+    }
+  }
+</code></pre></div>    </div>
+    <p>VPC 리소스 블록을 2가지 요소(resource type, resource name)로 정의를 하였다. 추가설명으로, 리소스 블록에서 EC2 인스턴스와 같은 물리적 요소 또는 Heroku Application과 같은 논리적 요소를 정의할 수 있다.</p>
+
+    <p>__자원유형( aws_vpc )__과 __자원이름( default )__를 명시했으며, 자원유형은 Terraform에서 지정한 유형을 사용해야 하고 자원이름은 자유롭게 네이밍이 가능하다. 이를 통해 VPC 생성, 수정 및 관리할 리소스를 정의하였다.</p>
+
+    <p>리소스에 대한 __인자( Argument )__는 블록 내에 저장된다. 위의 예시와 같이, CIDR_BLOCK 범위 지정, 테넌시 명시, 태그를 명시하거나 또는 EC2와 같이 머신 크기, 이미지 종류, VPC ID와 같이 리소스 구성을 명시할 수 있다. 해당 리소스 블록과 인자들에 대한 문서는 Terraform의 각 리소스 문서에 명시되어 있다.</p>
+  </li>
+  <li>
+    <p>Modules</p>
+  </li>
+  <li>
+    <p>Input variables</p>
+  </li>
+  <li>Interpolation</li>
+</ul>
+
+<p>참고
+<a href="https://www.linode.com/docs/applications/configuration-management/introduction-to-hcl/#:~:text=HCL%20is%20a%20configuration%20language,both%20human%20and%20machine%20friendly">inctoduction to HCL</a>
+<a href="https://learn.hashicorp.com/terraform?track=getting-started#getting-started">terraform practice</a></p>
+
+<p>https://www.terraform.io/docs/providers/metalcloud/guides/concepts.html</p>
+
+  </div><a class="u-url" href="/jekyll/update/2020/05/29/welcome-to-jekyll.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">맥주연구하는 엔지니어의 기술 블로그</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">맥주연구하는 엔지니어의 기술 블로그</li><li><a class="u-email" href="mailto:jhys0226@gmail.com">jhys0226@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/HaeyoonJo"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">HaeyoonJo</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A blog about DevOps, AWS, automation as well as deliver my experiences in both S.Korea and Israel.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
