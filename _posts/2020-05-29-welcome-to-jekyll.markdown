@@ -1,12 +1,16 @@
 ---
-title: Terraform Handson
+title: "[Terraform] 개념이해편, 테라폼 니 뭐하는 앤데?"
 layout: post
 date: '2020-05-29 11:47:24 +0000'
-categories: jekyll update
+categories:
+- ''
+- devops
+- terraform
 ---
 
-# Terraform Handson
-1년전부터 테라폼의 매력을 느껴 항상 해봐야지 하면서, 간단히 이해만 하고 실무에서는 아직 사용할 일이 없어 거의 손놓고 있었다.
+# Terraform 개념이해편, 테라폼 니 뭐하는 앤데?
+
+1년전부터 테라폼의 매력을 느껴 해봐야지 해봐야지 하면서, 간단히 이해만 하고 실무에서는 아직 사용할 일이 없어 거의 손놓고 있었다.
 2020년 5월 7일, DevOps 송주영님의 온라인 테라폼 강의를 듣고나서 다시 한번 시작해보자는 마음을 먹게 되어 이렇게 문서로 정리하게 되었다. 서울에서 근무할 당시, 시간날때마다 송주영님의 강의를 찾아 다녔었는데, 개인적으로 기술을 바라보는 그분의 철학을 존경하고 나의 롤모델이다.
 핸즈온으로 사용한 코드 또한 송주영님의 [github: aws-provisioning](https://github.com/jupitersong/aws-provisioning)에서 많이 참고했다.
 
