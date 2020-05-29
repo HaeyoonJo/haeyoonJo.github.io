@@ -12,12 +12,15 @@ categories: jekyll update
 
 ### 1. Terraform 도커 컨테이너에서 실행
 - [도커파일](Dockerfile) 작성 및 이미지 생성
+
 ```
 $ docker build -t haeyoon/terraform:latest
 ```
+
 ** HashiCorp에서 제공하는 공식 [Terraform 도커이미지](https://hub.docker.com/r/hashicorp/terraform/)를 사용해도 된다
 
 - 컨테이너 접속 및 테라폼으로 인프라 구성
+
 ```
 $ docker run -it -d \
     -v $(pwd):/home/terraform/ \
@@ -26,7 +29,8 @@ $ docker run -it -d \
 
 $ docker exec -it tfserver /bin/bash
 ```
-** attach로 접속하거나 exec명령어로 컨테이너 안에서 명령어를 실행하게도 할 수 있다.
+
+**attach로 접속하거나 exec명령어로 컨테이너 안에서 명령어를 실행하게도 할 수 있다.
 
 
 ### 2. Terraform
@@ -96,6 +100,5 @@ HashiCorp에서 정의한 Terraform 장점은 다음과 같다.
 
 참고
 [inctoduction to HCL](https://www.linode.com/docs/applications/configuration-management/introduction-to-hcl/#:~:text=HCL%20is%20a%20configuration%20language,both%20human%20and%20machine%20friendly)
-[terraform practice](https://learn.hashicorp.com/terraform?track=getting-started#getting-started)
 
-https://www.terraform.io/docs/providers/metalcloud/guides/concepts.html
+[terraform practice](https://learn.hashicorp.com/terraform?track=getting-started#getting-started)
