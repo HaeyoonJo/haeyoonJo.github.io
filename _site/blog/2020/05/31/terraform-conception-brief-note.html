@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>[Terraform] 기본 개념 간략한 정리 | 맥주연구하는 엔지니어의 기술 블로그</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="[Terraform] 기본 개념 간략한 정리" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="해당 페이지에 기재된 내용이 어느 블로그 내용에서 나온거 같다면 알려주세용." />
+<meta property="og:description" content="해당 페이지에 기재된 내용이 어느 블로그 내용에서 나온거 같다면 알려주세용." />
+<link rel="canonical" href="http://0.0.0.0:4000/blog/2020/05/31/terraform-conception-brief-note.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/blog/2020/05/31/terraform-conception-brief-note.html" />
+<meta property="og:site_name" content="맥주연구하는 엔지니어의 기술 블로그" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-31T18:47:00+00:00" />
+<script type="application/ld+json">
+{"headline":"[Terraform] 기본 개념 간략한 정리","dateModified":"2020-05-31T18:47:00+00:00","datePublished":"2020-05-31T18:47:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/blog/2020/05/31/terraform-conception-brief-note.html"},"url":"http://0.0.0.0:4000/blog/2020/05/31/terraform-conception-brief-note.html","description":"해당 페이지에 기재된 내용이 어느 블로그 내용에서 나온거 같다면 알려주세용.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="맥주연구하는 엔지니어의 기술 블로그" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">맥주연구하는 엔지니어의 기술 블로그</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">[Terraform] 기본 개념 간략한 정리</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-05-31T18:47:00+00:00" itemprop="datePublished">May 31, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>해당 페이지에 기재된 내용이 어느 블로그 내용에서 나온거 같다면 알려주세용.</p>
+
+<p>제가 공부할 때 노트에 적고 묵히고 묵혀두다가 블로그에 정리하는 편이라</p>
+
+<p><del>출처가 어딘지 자세히 기억이 나지 않을 때가..</del></p>
+
+<ol>
+  <li>기본개념 정리</li>
+</ol>
+
+<ul>
+  <li>
+    <p>Providers: 테라폼으로 정의할 인프라 제공자를 의미한다.</p>
+  </li>
+  <li>
+    <p>Resource : 실제로 생성할 인프라 자원을 의미한다.</p>
+  </li>
+  <li>
+    <p>Output: 인프라를 provision한 후, 생성된 자원의 특정 값을 output으로 출력 지정 가능하다.</p>
+  </li>
+  <li>
+    <p>Backend: Terraform의 상태를 저장할 공간을 지정할 수 있다.</p>
+
+    <p>( * BeNX는 S3를 기본적으로 사용 - 송주영님의 온라인  meetup에서 - )</p>
+  </li>
+  <li>
+    <p>Module: 공통적으로 활용할 수 있는 인프라 코드를 한 곳으로 모아 정의.  module 사용시, 변수만 바꾸어 동일한 리소스를 쉽게 생성이 가능하다.</p>
+  </li>
+  <li>
+    <p>Remote state: VPC, IAM과 같이 여러 서비스가 공통적으로 사용중인 리소스들을 공유하여 provisioning이 가능하다. tfstate파일이 저장되어 있는 backend 정보를 명시하면, terraform이 해당 backend에서   output 정보들을 가져온다.</p>
+  </li>
+</ul>
+
+<ol>
+  <li>Terraform 실행 순서</li>
+</ol>
+
+<ul>
+  <li>
+    <p>IAM에서 aws-cli 실행가능한 권한이 주어진 사용자 생성해야 한다.</p>
+  </li>
+  <li>
+    <p>terraform init: 해당 디렉토리에서 terraform initialization하면 terraform은 프로젝트에 적합한 providers plugin을 설치한다.</p>
+  </li>
+  <li>
+    <p>terraform plan: .tf 파일에 명시된 리소스 추가 및 변경사항 프로세스 리뷰가능하다.</p>
+  </li>
+  <li>
+    <p>terraform apply: 실제 리소스들을 생성하는 과정으로 실제 배포환경과 비교된 변경내용을 반영한다</p>
+
+    <p>변경된 내용은 state파일에 작성되며, apply 실행 전에 실행계획을 보여준다.</p>
+
+    <p>이 때 출력형식은 git diff와 같이 +, -로 추가/수정 및 삭제 여부를 확인할 수 있다.</p>
+  </li>
+  <li>
+    <p>terraform show: 해당 프로젝트에서 관리중인 provisioned 인프라 상태를 확인할 수 있다.</p>
+  </li>
+</ul>
+
+<p>다음글에서는 tfstate파일이 무엇인지, 어떻게 관리를 해야하는지 알아보자</p>
+
+  </div><a class="u-url" href="/blog/2020/05/31/terraform-conception-brief-note.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">맥주연구하는 엔지니어의 기술 블로그</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">맥주연구하는 엔지니어의 기술 블로그</li><li><a class="u-email" href="mailto:jhys0226@gmail.com">jhys0226@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/HaeyoonJo"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">HaeyoonJo</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A blog about DevOps, AWS, automation as well as deliver my experiences in both S.Korea and Israel.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
